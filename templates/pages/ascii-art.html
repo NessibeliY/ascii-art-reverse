@@ -1,0 +1,33 @@
+{{define "title"}}Ascii-art{{end}}
+{{define "form"}}
+<div class="header">
+    <h1>ascii-art-web</h1>
+
+    <form action="/ascii-art" method="POST" class="form">
+      <div class="text_box">
+        <textarea rows="5" cols="50" name="body">{{.OrigText}}</textarea>
+      </div>
+
+      <div class="all_radio">
+        <div class="radio_item">
+          <input type="submit" id="1" name="asciiType" value="shadow.txt" />
+          <label class="just_text" for="1">shadow</label>
+        </div>
+
+        <div class="radio_item">
+          <input type="submit" id="2" name="asciiType" value="standard.txt" />
+          <label class="just_text" for="2">standard</label>
+        </div>
+
+        <div class="radio_item">
+          <input type="submit" id="3" name="asciiType" value="thinkertoy.txt" />
+          <label class="just_text" for="3">tinker toy</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="text_box">
+    <pre class="maincontent">{{- .FinalText}} </pre>
+  </div>
+{{end}}
